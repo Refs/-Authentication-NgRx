@@ -1,27 +1,73 @@
 # AuthenticationWithNgRx
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.1.
+## Add ngrx dependencies
 
-## Development server
+1. package.json
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+npm install -s @ngrx/store@5.2.0
+npm install -s @ngrx/effects@5.2.0
+npm install -s @ngrx/entity@5.2.0
+npm install -s @ngrx/store-devtools@5.2.0
+npm install -s @ngrx/schematics@5.2.0
+```
 
-## Code scaffolding
+2. .angular-cli.json
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```json
+"defaults": {
+    "styleExt": "css",
+    "component": {
+    },
+    "schematics": {
+      "collection": "@ngrx/schematics"
+    }
+  }
+```
 
-## Build
+## Working with login page
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+1. install the angular material
 
-## Running unit tests
+* intall the package
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm install --save @angular/material@5.2.4 @angular/cdk@5.2.4
 
-## Running end-to-end tests
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* install angular animations
 
-## Further help
+```bash
+npm install --save @angular/animations@5.2.0
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+
+* include a material theme in style.css
+
+```bash
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+```
+
+*  add gesture support
+
+```bash
+npm install --save hammerjs
+
+```
+
+```ts
+/* src/main.ts */
+
+import 'hammerjs';
+
+```
+
+* Add material icons
+
+```html
+<!-- index.html -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+```
